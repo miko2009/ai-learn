@@ -1,0 +1,11 @@
+dotenv~=0.9.9
+langchain~=0.3.26
+langchain-deepseek
+python-dotenv~=1.1.1
+openai~=1.97.0
+requests
+pandas
+langchain_experimental
+pymilvus
+pymilvus.model
+milvus
