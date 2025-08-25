@@ -12,13 +12,15 @@
 |  | llama_index | 支持Markdown结构解析，可将不同层级内容映射为文档节点，优化索引效率, 保留原始内容标题,列表等结构化数据 | 对非标准Markdown语法兼容性一般 | 需要再做额外分块处理 ｜
 |  | unstructured | 精准解析Markdown语法，保留所有结构（包括表格、代码块、链接），输出结构化数据, 保留原始内容标题,列表等结构化数据  | 解析速度较慢，对超大Markdown文件支持有限 | 速度慢, 功能齐整｜
 | **PDF** | langchain_community.document_loaders | 提供多种加载器（如 `PyPDFLoader` 用于文本PDF，`UnstructuredPDFLoader` 用于扫描件），支持分页提取 | 扫描件PDF需额外OCR配置，复杂布局（如多列）提取易错乱 |
-|  | llama_index | 支持PDF分页加载和元数据提取，可结合OCR处理扫描件，与索引构建流程深度整合 | 对复杂排版PDF的结构识别能力较弱 |
+|  | llama_index | 支持PDF分页加载和元数据提取，可结合OCR处理扫描件，与索引构建流程深度整合. | 对复杂排版PDF的结构识别能力较弱. |
 |  | unstructured | 强项：支持复杂布局PDF（多列、图表混排）、扫描件OCR，可提取表格数据，保留原始格式信息 | 处理速度较慢，依赖较多系统库（如poppler） |
+|  | llamaPaser | 强项：支持复杂布局PDF（多列、图表混排）、扫描件OCR，可提取表格数据，保留原始格式信息, 可指定数据返回格式（如:markdown） | 处理速度较慢,需要申请API_KEY, 付费 |
+
 | **JSON** | langchain_community.document_loaders | 有 `JSONLoader` 可指定提取字段，支持嵌套JSON解析，输出结构化文档 | 对非标准JSON（如注释、格式错误）容错率低 |
 |  | llama_index | 支持JSON到文档对象的自动转换，可将JSON字段映射为文档元数据，优化检索相关性 | 复杂嵌套JSON需手动配置解析规则 |
 |  | unstructured | 可直接解析JSON为结构化数据，支持JSON Lines等变体格式，输出键值对结构 | 缺乏与大模型流程的直接集成，需手动转换为文档格式 |
 | **Web URL** | langchain_community.document_loaders | 提供 `WebBaseLoader` 等工具，支持静态网页提取，可结合 `BeautifulSoup` 解析，与LangChain爬虫工具链兼容 | 对动态JS渲染页面支持差，需额外集成Selenium等工具 |
-|  | llama_index | 支持URL加载并自动提取核心内容（过滤广告、导航栏），可直接生成网页摘要，优化索引质量 | 对需要登录的网页处理能力有限 |
+|  | llama_index | 支持URL加载并自动提取核心内容（过滤广告、导航栏），可直接生成网页摘要，优化索引质量 | 对需要登录的网页处理能力有限 | 
 |  | unstructured | 支持复杂网页结构内容解析，可提取文本、表格、图片链接，过滤冗余内容，输出结构化数据 | 不支持动态网页渲染，需配合爬虫工具使用 | 如果动态网页, 需要用http 请求到网页内容才能进行解析｜
 
 ## 总结
