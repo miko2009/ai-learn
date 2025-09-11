@@ -12,7 +12,7 @@ load_dotenv(override=True)
 from langchain.chat_models import init_chat_model
 
 def debug_mode(x):
-    print(x)
+    print("~~~~x~~~~", x)
     return x
 
 def print_hi(name):
